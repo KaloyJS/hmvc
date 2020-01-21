@@ -74,10 +74,10 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'oci:dbname=(DESCRIPTION=(ADDRESS=(HOST=10.194.1.43)(PROTOCOL=tcp)(PORT=1521))(CONNECT_DATA=(SID=CA02)))',
+	'dsn'	=> '',
 	'hostname' => '',
-	'username' => 'sbe',
-	'password' => 'artemis',
+	'username' => '',
+	'password' => '',
 	'database' => '',
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',
@@ -96,10 +96,10 @@ $db['default'] = array(
 );
 
 $db['con96'] = array(
-	'dsn'	=> 'oci:dbname=(DESCRIPTION=(ADDRESS=(HOST=10.194.1.43)(PROTOCOL=tcp)(PORT=1521))(CONNECT_DATA=(SID=CA02)))',
+	'dsn'	=> '',
 	'hostname' => '',
-	'username' => 'site96',
-	'password' => 'artemis',
+	'username' => '',
+	'password' => '',
 	'database' => '',
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',
