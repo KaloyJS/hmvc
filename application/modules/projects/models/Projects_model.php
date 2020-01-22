@@ -42,7 +42,7 @@ class Projects_model extends MY_Model {
         }
 
         public function get_activities_by_pid($id){
-            $qry = "SELECT ACTIVITY_ID, NAME, DETAILS, STATUS FROM SBE_PROJECTS_ACTIVITY
+            $qry = "SELECT ACTIVITY_ID, NAME, DETAILS, STATUS, ASSIGNEE FROM SBE_PROJECTS_ACTIVITY
                     WHERE PROJECT_ID = '{$id}' and DELETED IS NULL
                     ORDER BY CREATED_ON";
             $query = $this->db->query($qry);            

@@ -906,7 +906,8 @@ function getmodels($manuf){
 		$ci->load->database();
 		$query = "SELECT PRENOM as FIRST_NAME,NOM as LAST_NAME from utilisateurs where matricule='$badge'";
 		$res = $ci->db->query($query);
-		return $res->row();
+		$result = $res->row();
+		return $result->FIRST_NAME . " " . $result->LAST_NAME;
 	}
 
 

@@ -190,9 +190,9 @@
           </div>
           <div class="form-group">
             <div class="col-sm-12">
-              <label for="inputEmail3" class="col-sm-2">PROJECT ASSIGNEE:</label>
+              <label for="inputEmail3" class="col-sm-2">PROJECT OWNER:</label>
               <div class="col-sm-10">
-              <select class="form-control select2" type="text"  name="assignee" id="assignee" style="width: 100%;"  data-placeholder="SELECT TEAM MEMBER" required>
+              <select class="form-control select2" type="text"  name="assignee" id="assignee" style="width: 100%;"  data-placeholder="SELECT PROJECT OWNER" required>
                 <option></option>
                 <?php foreach($assigneeList as $assignee) : ?>              
                   <option value="<?php echo $assignee['BADGE']; ?>"><?php echo $assignee['FIRST_NAME']." ".$assignee['LAST_NAME']; ?></option>

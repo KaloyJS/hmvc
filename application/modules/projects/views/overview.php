@@ -15,7 +15,7 @@
   }
   
   $export_activities = json_encode($activities);
-
+  
  ?>
 
 <style type="text/css">
@@ -106,7 +106,7 @@
               
              
                 <div class="box-header with-border">
-                  <h3 class="box-title">Project Name: <strong><span class="project-details"><?php echo $project[0]->PROJECT_NAME; ?></span></strong></h3>
+                  <h3 class="box-title">Project Name: <strong><span class="project-details"><?php echo ucwords(strtolower($project[0]->PROJECT_NAME)); ?></span></strong></h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -114,7 +114,7 @@
                   
                   <hr>
 
-                  <h4>Assigned To: <strong><span class="project-details"><?php echo  ucwords(strtolower($project[0]->ASSIGNEE_NAME->FIRST_NAME))." ". ucwords(strtolower($project[0]->ASSIGNEE_NAME->LAST_NAME))  ?></span></strong></h4>           
+                  <h4>Project Owner: <strong><span class="project-details"><?php echo ucwords(strtolower($project[0]->ASSIGNEE_NAME));  ?></span></strong></h4>           
 
                   <hr>
 
@@ -195,6 +195,7 @@
                                   <th scope="col">#</th>
                                   <th scope="col">Name</th>
                                   <th scope="col">Details</th>
+                                  <th scope="col">Assigned to</th>
                                   <th scope="col">Status</th>
                                   <th scope="col">Actions</th>
                               </tr>
@@ -221,6 +222,9 @@
                                   </td>
                                   <td>
                                     <?php echo substr($activity->DETAILS, 0, 50) . "..."; ?>
+                                  </td>
+                                  <td>
+                                    <?php echo ucwords(strtolower(getAssigneeName($activity->ASSIGNEE))); ?>
                                   </td>
                                   <td>
                                     <?php $color = getActivityStatusColor($activity->STATUS); ?>
@@ -276,9 +280,9 @@
             </div>
             <div class="form-group">
               <div class="col-sm-12">
-                <label for="inputEmail3" class="col-sm-2">PROJECT ASSIGNEE:</label>
+                <label for="inputEmail3" class="col-sm-2">PROJECT OWNER:</label>
                 <div class="col-sm-10">
-                <select class="form-control select" type="text"  name="assignee" id="assignee" style="width: 100%;"  data-placeholder="SELECT TEAM MEMBER" required>
+                <select class="form-control select" type="text"  name="assignee" id="assignee" style="width: 100%;"  data-placeholder="SELECT PROJECT OWNER" required>
                   <option></option>
                   <?php foreach($assigneeList as $assignee) : ?>
                     <?php if($assignee['BADGE'] === $project[0]->ASSIGNEE) : ?>
@@ -417,6 +421,20 @@
                 </div>
               </div>
             </div>
+
+            <div class="form-group">
+              <div class="col-sm-12">
+                <label for="inputEmail3" class="col-sm-2">ASSIGN TO:</label>
+                <div class="col-sm-10">
+                <select class="form-control select" type="text"  name="assignee" id="activityAssignee" style="width: 100%;"  data-placeholder="SELECT TEAM MEMBER" required>
+                  <option></option>
+                  <?php foreach($assigneeList as $assignee) : ?>              
+                    <option value="<?php echo $assignee['BADGE']; ?>"><?php echo $assignee['FIRST_NAME']." ".$assignee['LAST_NAME']; ?></option>
+                  <?php endforeach; ?>
+                </select>
+                </div>
+              </div>
+          </div>
             
             <div class="form-group">
               <div class="col-sm-12">
@@ -460,6 +478,21 @@
             </div>
             <input type="hidden" name="activity_id" id="updateActivityID" readonly>
             <input type="hidden" name="project_id" value="<?php echo $project[0]->PROJECT_ID; ?>" readonly>
+            
+            <div class="form-group">
+              <div class="col-sm-12">
+                <label for="inputEmail3" class="col-sm-2">ASSIGNED TO:</label>
+                <div class="col-sm-10">
+                <select class="form-control select" type="text"  name="assignee" id="updateActivityAssignee" style="width: 100%;"  data-placeholder="SELECT TEAM MEMBER" required>
+                  <option></option>
+                  <?php foreach($assigneeList as $assignee) : ?>              
+                    <option value="<?php echo $assignee['BADGE']; ?>"><?php echo $assignee['FIRST_NAME']." ".$assignee['LAST_NAME']; ?></option>
+                  <?php endforeach; ?>
+                </select>
+                </div>
+              </div>
+          </div>
+
             <div class="form-group">
               <div class="col-sm-12">
                 <label class="col-sm-2">STATUS:</label>

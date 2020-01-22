@@ -75,11 +75,15 @@ class Projects extends BackendController
      */
     public function index()
     {
+		$accessArray = array('lkumar', 'cnayve');
+        if (in_array(strtolower($this->sbegn_u_name), $accessArray)) {
+            $this->data['projects']= $this->Projects_model->getProjects();
+            $this->data['assigneeList'] = $this->Projects_model->getAssigneeList();
+            $this->template2('projects/projects', $this->data, true, 'projects/projects/js');
+        } else {
+            redirect('welcome');
+        }
 		
-
-		$this->data['projects']= $this->Projects_model->getProjects();
-        $this->data['assigneeList'] = $this->Projects_model->getAssigneeList();
-        $this->template2('projects/projects', $this->data, true, 'projects/projects/js');
         
     }
 
@@ -94,7 +98,7 @@ class Projects extends BackendController
 
     public function actions()
     {
-
+        // Where most of the CRUD happens
         if(!$this->session->has_userdata(PORTAL_NAME.'portal')) {
             session_start();
             $_SESSION['url'] = $_SERVER['REQUEST_URI'];             
@@ -197,6 +201,7 @@ class Projects extends BackendController
             if (isset($_POST['updateActivity'])) {
                 $id = $_POST['activity_id'];
                 $project_id = $_POST['project_id'];
+                $update_data['ASSIGNEE'] = $_POST['assignee'];
                 $update_data['STATUS']  = $_POST['status'];
                 $update_data['UPDATED_ON'] = 'sysdate';
                 $update_data['UPDATED_BY'] = $userName;

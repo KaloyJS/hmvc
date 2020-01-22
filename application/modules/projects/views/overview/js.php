@@ -57,7 +57,7 @@
 		}
 		html += `</ul>`;		
 		activityDetails.innerHTML = html;
-
+		$("#updateActivityAssignee").val(obj.ASSIGNEE).trigger('change');
 		$("#updateActivityStatus").val(obj.STATUS).trigger('change');
 	}
 
