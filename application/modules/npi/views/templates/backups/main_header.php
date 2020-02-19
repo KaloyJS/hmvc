@@ -9,11 +9,10 @@ $sbegn_u_name = $this->session->userdata(PORTAL_NAME.'uname');
 		$sbegn_access = $this->session->userdata(PORTAL_NAME.'access');
 }
 		?>
-
 <div id="loading">
   <div class="loader"></div>
-</div>    
-<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
+</div>
+<body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
  
    <header class="main-header">
@@ -27,7 +26,7 @@ $sbegn_u_name = $this->session->userdata(PORTAL_NAME.'uname');
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top nobg">
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <a href="#" class="sidebar-toggle"  data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
       <div class="navbar-custom-menu">

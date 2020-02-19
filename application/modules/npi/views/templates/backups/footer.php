@@ -10,11 +10,14 @@ echo date('Y')-1; echo '-'.date('Y');
 </footer>
 
 <!-- jQuery 3 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <!-- <script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/jquery/dist/jquery.min.js"></script> -->
 <!-- jQuery UI 1.11.4 -->
 <script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-
+<script>
+// $.widget.bridge('uibutton', $.ui.button);
+</script>
 <!-- Bootstrap 3.4.1 -->
 <script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
@@ -31,17 +34,26 @@ echo date('Y')-1; echo '-'.date('Y');
 <!-- jQuery Knob Chart -->
 <script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
-<script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/moment/min/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<!-- <script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/moment/min/moment.min.js"></script> -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
-<!-- <script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script> -->
-<script src="<?php echo base_url(); ?>assets/backend/AdminLTE/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 <!-- CK Editor -->
 <script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/ckeditor/ckeditor.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="<?php echo base_url(); ?>assets/backend/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Editors page script -->
-
+<script>
+  // $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    // CKEDITOR.replace('editor1')
+    //bootstrap WYSIHTML5 - text editor
+    // $('.textarea').wysihtml5()
+  // })
+</script>
 
 <!-- Compose page script -->
 
@@ -60,7 +72,7 @@ echo date('Y')-1; echo '-'.date('Y');
 <script>
   $(document).ready(function () {
     $('.sidebar-menu').tree();
-	
+  
   })
 </script>
 <!-- PACE -->
@@ -72,7 +84,7 @@ echo date('Y')-1; echo '-'.date('Y');
 <!-- Chart.js page script -->
 
 <!-- AdminLTE dashboard2 demo (This is only for demo purposes) 
-
+<script src="<?php echo base_url(); ?>assets/backend/AdminLTE/dist/js/pages/dashboard2.js"></script>
 -->
 <!-- FLOT CHARTS -->
 <script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/Flot/jquery.flot.js"></script>
@@ -101,8 +113,7 @@ echo date('Y')-1; echo '-'.date('Y');
 <!-- bootstrap time picker -->
 <script src="<?php echo base_url(); ?>assets/backend/AdminLTE/plugins/timepicker/bootstrap-timepicker.min.js"></script>
 <!-- Select2 -->
-<script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
-<!-- <script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/select2/dist/js/select2.full.min.js"></script> -->
+<script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/select2/dist/js/select2.full.min.js"></script>
 <!-- Advanced forms page script -->
 
 <!-- Bootstrap slider -->
@@ -110,25 +121,18 @@ echo date('Y')-1; echo '-'.date('Y');
 <!-- Bootstrap slider page script-->
 
 <!-- DataTables -->
-<!--<script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<!-- Datatables page script added -->
-
-<script src="<?php echo base_url(); ?>assets/backend/AdminLTE/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/backend/AdminLTE/plugins/datatables/dataTables.bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/backend/AdminLTE/plugins/datatables/dataTables.buttons.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/backend/AdminLTE/plugins/datatables/jszip.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/backend/AdminLTE/plugins/datatables/buttons.html5.min.js"></script>
+<!-- Datatables page script -->
 
 <!-- fullCalendar -->
-<!-- <script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/moment/moment.js"></script> -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/moment/moment.js"></script>
 <script src="<?php echo base_url(); ?>assets/backend/AdminLTE/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
 <script src="<?=base_url()?>assets/backend/AdminLTE/dist/js/dialogjs.js"></script>
-<!-- <script src="<?=base_url()?>assets/backend/AdminLTE/dist/js/jquery-ui.min.js"></script> -->
-<!-- SweetAlert 2 -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
+<script src="<?=base_url()?>assets/backend/AdminLTE/dist/js/jquery-ui.min.js"></script>
+<script src="<?=base_url()?>assets/backend/AdminLTE/dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="<?=base_url()?>assets/backend/AdminLTE/plugins/tabledit/jquery.tabledit.js"></script> 
+<!-- Calendar page script -->
 <script type="text/javascript">
   // Removes loading modal when page is ready
   document.onreadystatechange = function() {
@@ -138,65 +142,23 @@ echo date('Y')-1; echo '-'.date('Y');
     }
   }
 
-  // Loads loading animation on ajax call
-  $(document).on({
-      
-      ajaxStart: function() {
-        const loadingModal = document.querySelector('#loading');
-        loadingModal.style.display = 'block';
-      },
-      ajaxStop: function() { 
-        const loadingModal = document.querySelector('#loading');
-        loadingModal.style.display = 'none'; 
-      } 
-
-  });
-
-  $(document).on('click', '.closeCallout', function(){
-      $(".callout").fadeOut();
-  });
-
-
-  /*function that distinguishes if variable is numeric or not*/
-  function isNumber(n) { return !isNaN(parseFloat(n)) && !isNaN(n - 0) }
-
-  // Fixes
   // Datepicker fix
-  var datepicker = $.fn.datepicker.noConflict(); // return $.fn.datepicker to previously assigned value
+  //var datepicker = $.fn.datepicker.noConflict(); // return $.fn.datepicker to previously assigned value
   $.fn.bootstrapDP = datepicker;                 // give $().bootstrapDP the bootstrap-datepicker functionality
-  // Select 2 fix
-  $.fn.modal.Constructor.prototype.enforceFocus = function() {};
-
-  const options = {
+    
+  const dpOptions = {
     format: 'yyyy/mm/dd',
     autoclose: true,
     orientation: 'top',
     todayHighlight: true  
   };
 
-  function post_to_url(path, params, method) {
-        method = method || "post";
+  // Select 2 fix in modals
+  $.fn.modal.Constructor.prototype.enforceFocus = function() {};
 
-        var form = document.createElement("form");
+  $(document).on('click', '.closeCallout', function(){
+      $(".callout").fadeOut();
+  });
+</script>  
 
-        //Move the submit function to another variable
-        //so that it doesn't get overwritten.
-        form._submit_function_ = form.submit;
-
-        form.setAttribute("method", method);
-        form.setAttribute("action", path);
-
-        for(var key in params) {
-            var hiddenField = document.createElement("input");
-            hiddenField.setAttribute("type", "hidden");
-            hiddenField.setAttribute("name", key);
-            hiddenField.setAttribute("value", params[key]);
-
-            form.appendChild(hiddenField);
-        }
-
-        document.body.appendChild(form);
-        form._submit_function_(); //Call the renamed function.
-    }
-</script>
 
